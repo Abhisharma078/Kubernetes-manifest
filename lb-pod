@@ -9,7 +9,7 @@ spec:
     - name: nginx-cont
       image: nginx:latest
       ports:
-        containerPort: 80
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
