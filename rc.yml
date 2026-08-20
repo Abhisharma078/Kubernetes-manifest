@@ -13,8 +13,8 @@ spec:
       name: rc-temp
       labels: 
         app: rc
-  spec:
-    containers:
+    spec:
+      containers:
       - name: nginx-cont
         image: nginx:latest
         ports: 
