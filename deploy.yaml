@@ -19,7 +19,7 @@ spec:
          labels:
            app: deploy
     spec:
-      conatiners: 
+      containers: 
         - name: apache-cont
           image: httpd:latest
           ports:
