@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: my-pod
+  labels:
+    app: taint
+spec:
+  tolerations:
+   - key: "key"
+     operator: "Equal"
+     value: "true"
+     effect: "NoSchedule"
+  containers:
+    - name: taint-cont
+      image: httpd:latest
+      ports: 
+       - containerPort: 80 
