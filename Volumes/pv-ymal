@@ -7,7 +7,7 @@ metadata:
 spec:
   capacity:
     storage: 10Gi
-  accessmode:
+  accessmodes:
    - ReadWriteOnce:
   presistentVolumeReclaimPolicy: Retain
   volumes: filesystem
