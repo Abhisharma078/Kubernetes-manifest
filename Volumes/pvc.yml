@@ -6,8 +6,8 @@ metadata:
     app: pvc
 spec:
   resources:
-    request:
+    requests:
       storage: 5Gi
-  acessModes:
+  accessModes:
   - ReadWriteOnce
   storageClassName: standard
