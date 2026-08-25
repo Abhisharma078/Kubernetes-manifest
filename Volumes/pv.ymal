@@ -7,10 +7,10 @@ metadata:
 spec:
   capacity:
     storage: 10Gi
-  accessmodes:
-   - ReadWriteOnce:
-  presistentVolumeReclaimPolicy: Retain
-  volumes: filesystem
+  accessModes:
+   - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  volumeMode: Filesystem
   storageClassName: standard
   hostPath:
     path: /mnt/data
