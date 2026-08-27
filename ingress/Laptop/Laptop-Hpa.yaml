@@ -1,4 +1,4 @@
-apiVersion: AutoScalling/v2
+apiVersion: AutoScaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: laptop-hpa
@@ -7,15 +7,15 @@ metadata:
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
-    kind: Deployemnt
+    kind: Deployment
     name: laptop-deploy
   minReplicas: 2
   maxReplicas: 5
   metrics:
   - type: Resource
     resource:
-      name: CPU
+      name: cpu
       target:
         type: Utilization
-        avergeUtilization: 50
+        averageUtilization: 50
 
