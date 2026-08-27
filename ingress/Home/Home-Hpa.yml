@@ -1,11 +1,11 @@
-apiVersion: autoacalling/v1
+apiVersion: autoscalling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: home-hpa
   labels:
     app: home
 spec:
-  scaletargetRef:
+  scaleTargetRef:
     apiVersion: apps:v1
     kind: Deployment
     name: home-deploy
@@ -15,7 +15,8 @@ spec:
   - type: Resource
     resource:
     - name: CPU
-      target: Utilization
-      avergeUtilization: 50
+      target:
+        type: Utilization
+        avergeUtilization: 50
       
         
