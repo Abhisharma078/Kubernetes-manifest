@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: home-deploy
+  labels:
+    app: home
+spec:
+  replicas: 2
+  selector:
+    matchlabels:
+      app: home
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailabel: 1
+  template:
+    metadata:
+      name: my-deploy-temp
+      labels:
+        app: home
+    spec:
+      containers:
+       - name: nginx-cont
+         image: nginx:latest
+         ports:
+         - containerPort: 80
+
+         resources:
+           requests:
+              cpu: "100mi"
+              memory: "64mi"
+           limits:
+             cpu: "200mi"
+             memory: "128mi"
+
+             
+           
+  
+          
+      
+        

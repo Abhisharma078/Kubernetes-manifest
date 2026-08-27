@@ -1,0 +1,21 @@
+apiVersion: autoacalling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: home-hpa
+  labels:
+    app: home
+spec:
+  scaletargetRef:
+    apiVersion: apps:v1
+    kind: Deployment
+    name: home-deploy
+  minReplicas: 3
+  maxReplicas: 6
+  metrics:
+  - type: Resource
+    resource:
+    - name: CPU
+      target: Utilization
+      avergeUtilization: 50
+      
+        
