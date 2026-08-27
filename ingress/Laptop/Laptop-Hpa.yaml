@@ -1,4 +1,4 @@
-apiVersion: AutoScaling/v2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: laptop-hpa
