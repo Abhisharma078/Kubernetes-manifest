@@ -1,4 +1,4 @@
-apiVersion: AutoScalling/v2
+apiVersion: autoscalling/v2
 kind: HorizotalPodAutoscaler
 metadata:
   name: mobile-hpa
@@ -14,7 +14,7 @@ spec:
   metrics:
   - type: Resource
     resource:
-    - name: CPU
+      name: CPU
       target: Utilization
       avergeUtilization: 50
     
