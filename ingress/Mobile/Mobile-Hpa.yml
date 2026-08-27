@@ -1,11 +1,11 @@
 apiVersion: autoscaling/v2
-kind: HorizotalPodAutoscaler
+kind: HorizontalPodAutoscaler
 metadata:
   name: mobile-hpa
   labels:
     app: mobile
 spec:
-  ScaleTargetRef:
+  scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
     name: mobile-deploy
@@ -15,6 +15,7 @@ spec:
   - type: Resource
     resource:
       name: CPU
-      target: Utilization
-      avergeUtilization: 50
+      target: 
+        type: Utilization
+        averageUtilization: 50
     
