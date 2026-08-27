@@ -1,4 +1,4 @@
-apiVersion: autoscalling/v2
+apiVersion: autoscaling/v2
 kind: HorizotalPodAutoscaler
 metadata:
   name: mobile-hpa
