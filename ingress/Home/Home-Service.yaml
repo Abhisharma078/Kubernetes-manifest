@@ -9,8 +9,8 @@ spec:
   selector:
     app: home
   ports:
-   - name: home-svc
-     protocol: TCP
-     port: 80
-     targetPort: 80
+  - name: home-svc
+    protocol: TCP
+    port: 80
+    targetPort: 80
      
