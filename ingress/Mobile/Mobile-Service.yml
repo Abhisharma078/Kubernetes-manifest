@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mobile-svc
+  labels: 
+    app: mobile
+spec:
+  type: ClusterIP
+  selector:
+    app: mobile
+  ports:
+  - name: mobile-port
+    protocol: TCP
+    ports: 80
+    targetPort: 80
+    
