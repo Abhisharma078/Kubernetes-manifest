@@ -1,1 +1,37 @@
 apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laptop-deploy
+  labels:
+    app: laptop
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSegure: 1
+      maxUnavailabel: 2
+  selector:
+    matchLabels:
+      app: laptop
+  template:
+    metadata:
+      name: laptop-deploy-temp
+      labels:
+        app: laptop
+    spec:
+      containers:
+       - name: apache-cont
+         image: httpd:latest
+         ports:
+          - containerPort: 80
+
+         Resources:
+           requests:
+             cpu: "100m"
+             memory: "64Mi"
+           limits:
+             cpu: "200m"
+             memory: "128Mi"
+             
+
