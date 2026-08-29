@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fron-deploy
+  labels:
+    app: fron
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fron
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: 
+      maxSurge: 2
+      maxUnavailable: 1
+  template:
+    metadata:
+      name: fron-deploy-temp
+      labels:
+        app: fron
+    spec:
+      containers:
+      - name: fron-cont
+        image: # ECS image url 
+        ports: 
+        - containerPort: 80
+
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "64Mi"
+          limits: 
+            cpu: "200m"
+            memory: "128Mi"
+

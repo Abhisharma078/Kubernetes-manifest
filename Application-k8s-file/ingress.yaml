@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+spec:
+  ingressClassName: nginx / kong lb / Istion lb
+  rules: 
+   - host: abhicloud.online 
+     http:
+       paths:
+       - path: /
+         pathType: Prefix 
+         backend:
+           service:
+             name: fron-svc
+             port: 
+               number: 80
+       - path: /api
+         pathType: Prefix
+         backend:
+           service:
+             name: back-svc
+             port:
+               number: 8080
